@@ -71,13 +71,11 @@ class MCP_CAN {
 
     void mcp2515_reset(void);                                   // reset mcp2515
 
-    byte mcp2515_readRegister(const byte address);              // read mcp2515's register
+   
 
     void mcp2515_readRegisterS(const byte address,
                                byte values[],
                                const byte n);
-    void mcp2515_setRegister(const byte address,                // set mcp2515's register
-                             const byte value);
 
     void mcp2515_setRegisterS(const byte address,               // set mcp2515's registers
                               const byte values[],
@@ -174,7 +172,10 @@ class MCP_CAN {
                     mode);                  // switch supported pins between HiZ, interrupt, output or input
     bool mcpDigitalWrite(const byte pin, const byte mode);             // write HIGH or LOW to RX0BF/RX1BF
     byte mcpDigitalRead(const byte pin);                               // read HIGH or LOW from supported pins
-
+    
+    void mcp2515_setRegister(const byte address,                // set mcp2515's register
+                             const byte value);
+    byte mcp2515_readRegister(const byte address);              // read mcp2515's register
 };
 
 #endif
